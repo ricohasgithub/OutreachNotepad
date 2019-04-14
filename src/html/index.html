@@ -3,19 +3,12 @@
 
 <Head>
 
-  <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBs5DSqjer7HCmrgdY7DNkKMIFBD8DmEn4",
-      authDomain: "outreachlog-c8df3.firebaseapp.com",
-      databaseURL: "https://outreachlog-c8df3.firebaseio.com",
-      projectId: "outreachlog-c8df3",
-      storageBucket: "outreachlog-c8df3.appspot.com",
-      messagingSenderId: "686191595291"
-    };
-    firebase.initializeApp(config);
-  </script>
+  <script defer src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+
+  <script defer src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script>
+
+  <script defer src="./init-firebase.js"></script>
 
   <script src = "scripts/main.js"> </script>
   <link href = "styles/Style.css" rel = "stylesheet">
