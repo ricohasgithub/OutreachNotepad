@@ -3,18 +3,55 @@
 
 <Head>
 
-  <script defer src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+  <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBs5DSqjer7HCmrgdY7DNkKMIFBD8DmEn4",
+        authDomain: "outreachlog-c8df3.firebaseapp.com",
+        databaseURL: "https://outreachlog-c8df3.firebaseio.com",
+        projectId: "outreachlog-c8df3",
+        storageBucket: "outreachlog-c8df3.appspot.com",
+        messagingSenderId: "686191595291"
+      };
+      firebase.initializeApp(config);
+  </script>
 
-  <script defer src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
-  <script defer src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: 'loggedIn.html',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        ],
+        // tosUrl and privacyPolicyUrl accept either url string or a callback
+        // function.
+        // Terms of service url/callback.
+        tosUrl: '<your-tos-url>',
+        // Privacy policy url/callback.
+        privacyPolicyUrl: function() {
+          window.location.assign('<your-privacy-policy-url>');
+        }
+      };
 
-  <script defer src="./init-firebase.js"></script>
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
 
   <script src = "scripts/main.js"> </script>
   <link href = "styles/Style.css" rel = "stylesheet">
 
 </Head>
 
+<Body>
 
+  <div id="firebaseui-auth-container"></div>
+
+</Body>
 
 </HTML>
