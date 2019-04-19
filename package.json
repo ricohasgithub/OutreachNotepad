@@ -1,0 +1,19 @@
+{
+  "name": "outreachnotepad",
+  "version": "1.0.0",
+  "description": "Notepad applcation used to keep track of outreach/volunteer hours within organizations. Built using Firebase.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricozhuthegreat/OutreachNotepad.git"
+  },
+  "author": "Rico Zhu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ricozhuthegreat/OutreachNotepad/issues"
+  },
+  "homepage": "https://github.com/ricozhuthegreat/OutreachNotepad#readme"
+}
