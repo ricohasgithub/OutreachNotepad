@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ricozhuthegreat/OutreachNotepad/issues"
   },
-  "homepage": "https://github.com/ricozhuthegreat/OutreachNotepad#readme"
+  "homepage": "https://github.com/ricozhuthegreat/OutreachNotepad#readme",
+  "dependencies": {
+    "firebase": "^5.10.0"
+  }
 }
