@@ -3,6 +3,9 @@
 
 <Head>
 
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"/>
+  <link type="text/css" rel ="stylesheet" href = "/src/css/styles.css"/>
+
   <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
   <script>
       // Initialize Firebase
@@ -18,7 +21,6 @@
   </script>
 
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
   <script type="text/javascript">
       // FirebaseUI config.
       var uiConfig = {
@@ -43,16 +45,57 @@
       ui.start('#firebaseui-auth-container', uiConfig);
     </script>
 
-  <script src = "scripts/index.js"> </script>
-  <link href = "styles/Style.css" rel = "stylesheet">
+    <script src = "scripts/index.js"> </script>
+
+    <style>
+    
+      input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+
+      #def-log-in {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+
+    </style>
 
 </Head>
 
 <Body>
 
   <div id="def-log-in">
-  
+    <form>
+      <label for="username">Username:</label>
+      <input type="text" name="username" value=""> <br>
+      <label for="password">Password: </label>
+      <input type="text" name="password" value="hunter2">
+      <input type="submit">
+    </form>
   </div>
+
   <div id="firebaseui-auth-container"></div>
 
 </Body>
