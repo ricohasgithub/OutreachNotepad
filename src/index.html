@@ -4,7 +4,7 @@
 <Head>
 
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"/>
-  <link type="text/css" rel ="stylesheet" href = "/src/css/styles.css"/>
+  <link type="text/css" rel ="stylesheet" href = "styles.css"/>
 
   <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
   <script>
@@ -45,69 +45,12 @@
       ui.start('#firebaseui-auth-container', uiConfig);
     </script>
 
-    <script src = "scripts/index.js"> </script>
-
-    <style>
-
-      label {
-        font-family: sans-serif;
-        align: center;
-        margin-left: 30px;
-        margin-right: 5px;
-      }
-
-      input[type=text], select {
-        width: 250px;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-        align: center;
-      }
-
-      input[type=submit] {
-        width: 50%;
-        background-color: #4286f4;
-        color: white;
-        padding: 14px 20px;
-        margin-top: 25px;
-        margin-left: 118px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        align: center;
-      }
-
-      input[type=submit]:hover {
-        background-color: #1f64d3;
-        align: center;
-      }
-
-      #def-log-in {
-        border-radius: 5px;
-        background-color: #f2f2f2;
-        padding: 20px;
-        margin-left: 750px;
-      }
-
-    </style>
+    <script src = "index.js"> </script>
 
 </Head>
 
 <Body>
 
-  <div id="def-log-in">
-    <form>
-      <label for="username">Username:</label>
-      <input type="text" name="username" value=""> <br>
-      <label for="password">Password:</label>
-      <input type="text" name="password" value="hunter2">
-      <input type="submit" value="Sign in">
-    </form>
-    <div id="firebaseui-auth-container"></div>
-  </div>
 
 </Body>
 
