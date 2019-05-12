@@ -9,6 +9,19 @@
 
 #header-title {
   margin-left: 50px;
+  float: left;
+}
+
+#header-button {
+  background: #4286f4;
+  float: right;
+  color: white;
+  border: none;
+  padding: 32px 30px;
+}
+
+#header-button:hover {
+  background: #1f64d3;
 }
 
 body {
