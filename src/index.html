@@ -3,7 +3,6 @@
 
 <Head>
 
-  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"/>
   <link type="text/css" rel ="stylesheet" href = "styles.css"/>
 
   <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
@@ -20,32 +19,7 @@
       firebase.initializeApp(config);
   </script>
 
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-  <script type="text/javascript">
-      // FirebaseUI config.
-      var uiConfig = {
-        signInSuccessUrl: 'loggedIn.html',
-        signInOptions: [
-          // Leave the lines as is for the providers you want to offer your users.
-          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        ],
-        // tosUrl and privacyPolicyUrl accept either url string or a callback
-        // function.
-        // Terms of service url/callback.
-        tosUrl: '<your-tos-url>',
-        // Privacy policy url/callback.
-        privacyPolicyUrl: function() {
-          window.location.assign('<your-privacy-policy-url>');
-        }
-      };
-
-      // Initialize the FirebaseUI Widget using Firebase.
-      var ui = new firebaseui.auth.AuthUI(firebase.auth());
-      // The start method will wait until the DOM is loaded.
-      ui.start('#firebaseui-auth-container', uiConfig);
-    </script>
-
-    <script src = "index.js"> </script>
+  <script src = "index.js"> </script>
 
 </Head>
 
@@ -53,8 +27,8 @@
 
   <div id = "header-menu">
     <h1 id = "header-title"> Outreach Notepad </h1>
-    <button type = "button" id = "header-button"> Log in </button>
-    <button type = "button" id = "header-button"> Sign up </button>
+    <a href = "login.html" type = "button" id = "header-button"> Log in </button>
+    <a href = "signup.html" type = "button" id = "header-button"> Sign up </button>
   </div>
 
 </Body>
