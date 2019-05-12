@@ -4,7 +4,21 @@
 <Head>
 
   <link type="text/css" rel ="stylesheet" href = "login.css"/>
-  <script src = "index.js"> </script>
+  <script src = "signup.js"> </script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+  <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBs5DSqjer7HCmrgdY7DNkKMIFBD8DmEn4",
+        authDomain: "outreachlog-c8df3.firebaseapp.com",
+        databaseURL: "https://outreachlog-c8df3.firebaseio.com",
+        projectId: "outreachlog-c8df3",
+        storageBucket: "outreachlog-c8df3.appspot.com",
+        messagingSenderId: "686191595291"
+      };
+      firebase.initializeApp(config);
+  </script>
 
 </Head>
 
@@ -16,7 +30,7 @@
       <input type="text" name="username" value=""> <br>
       <label for="password">Password:</label>
       <input type="text" name="password" value="hunter2">
-      <input type="submit" value="Sign up">
+      <input type="submit" value="Sign up" onclick="">
     </form>
   </div>
 
