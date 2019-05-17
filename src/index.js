@@ -7,6 +7,7 @@ const loggedin = false;
 // Main document body div
 let main = document.getElementById("main-body");
 
+// Event Listener for DOM intro text append
 document.addEventListener('DOMContentLoaded', function() {
   console.log("Method Called");
   if (!loggedin) {
@@ -17,12 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
     logPrompt.appendChild(logPromptText);
 
     // Add css
-    logPrompt.style.margin = '300px 400px';
+    logPrompt.style.margin = '300px 435px';
+    logPrompt.style.align = 'center';
 
     main.appendChild(logPrompt);
     console.log("Appended Child");
   } else {
-    // User has signed in already, redirect to profile page with stats
+    // User has signed in already, append with profile page and stats
 
   }
 }, false);
