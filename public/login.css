@@ -16,6 +16,17 @@ input[type=text], select {
   align: center;
 }
 
+input[type=password], select {
+  width: 250px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  align: center;
+}
+
 input[type=submit] {
   width: 50%;
   background-color: #4286f4;

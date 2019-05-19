@@ -45,22 +45,53 @@
       ui.start('#firebaseui-auth-container', uiConfig);
     </script>
 
-    <script src = "index.js"> </script>
-
 </Head>
 
 <Body>
 
   <div id="def-log-in">
     <form>
-      <label for="username">Username:</label>
-      <input type="text" name="username" value=""> <br>
-      <label for="password">Password:</label>
-      <input type="text" name="password" value="hunter2">
-      <input type="submit" value="Sign in">
+      <div>
+        <label for="username">Username:</label>
+        <input id="email" type="text" name="username" placeholder="mysupercoolemail@hmail.com"> <br>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input id="password" type="password" name="password" placeholder="hunter2">
+      <div/>
+      <div>
+        <input id="log-in" type="submit" value="Log in">
+        <div id="firebaseui-auth-container"></div>
+      </div>
     </form>
-    <div id="firebaseui-auth-container"></div>
   </div>
+
+  <!--Handle auth events-->
+  <script>
+    firebase.auth().onAuthStateChanged(function(user) {
+      window.user = user;
+      // Step 1:
+      //  If no user, sign in anonymously with firebase.auth().signInAnonymously()
+      //  If there is a user, log out out user details for debugging purposes.
+    });
+  </script>
+
+  <!--Handle page events-->
+  <script>
+    document.querySelector('#sign-up').addEventListener('click', function(e) {
+      let email = document.querySelector('#email').value;;
+      let password = document.querySelector('#password').value;
+      console.log(email);
+      console.log(password);
+      firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+      })
+    });
+  </script>
 
 </Body>
 
