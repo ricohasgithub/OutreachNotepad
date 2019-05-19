@@ -69,20 +69,24 @@
   <!--Handle auth events-->
   <script>
     firebase.auth().onAuthStateChanged(function(user) {
-      window.user = user;
-      // Step 1:
-      //  If no user, sign in anonymously with firebase.auth().signInAnonymously()
-      //  If there is a user, log out out user details for debugging purposes.
+      console.log(user);
+      if (user !== null) {
+        window.location = "index.html";
+      }
     });
   </script>
 
   <!--Handle page events-->
   <script>
-    document.querySelector('#sign-up').addEventListener('click', function(e) {
+    document.querySelector('#log-in').addEventListener('click', function(e) {
+      // Prevent refreshing to get POST data and prevent null auths
+      e.preventDefault();
+      // Get query email and password info
       let email = document.querySelector('#email').value;;
       let password = document.querySelector('#password').value;
       console.log(email);
       console.log(password);
+      // Firebase sign in
       firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
