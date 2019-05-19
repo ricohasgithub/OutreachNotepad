@@ -81,6 +81,7 @@
     document.querySelector('#log-in').addEventListener('click', function(e) {
       // Prevent refreshing to get POST data and prevent null auths
       e.preventDefault();
+      e.stopPropagation();
       // Get query email and password info
       let email = document.querySelector('#email').value;;
       let password = document.querySelector('#password').value;
