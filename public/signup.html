@@ -26,13 +26,42 @@
 
   <div id="def-log-in">
     <form>
-      <label for="username">Username:</label>
-      <input type="text" name="username" value=""> <br>
-      <label for="password">Password:</label>
-      <input type="text" name="password" value="hunter2">
-      <input type="submit" value="Sign up" onclick="">
+      <div>
+        <label for="username">Username:</label>
+        <input id="email" type="text" name="username" placeholder="my_emil@hmail.com"> <br>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input id="password" type="text" name="password" placeholder="hunter2">
+      <div/>
+      <div>
+        <button id="sign-up" value="Sign up">
+      </div>
     </form>
   </div>
+
+  <!--Handle auth events-->
+  <script>
+    firebase.auth().onAuthStateChanged(function(user) {
+      window.user = user;
+      // Step 1:
+      //  If no user, sign in anonymously with firebase.auth().signInAnonymously()
+      //  If there is a user, log out out user details for debugging purposes.
+    });
+  </script>
+
+  <!--Handle page events-->
+  <script>
+    document.querySelector('#sign-up').addEventListener('click', function(e) {
+      firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+      }
+    });
+  </script>
 
 </Body>
 
