@@ -28,8 +28,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     header.appendChild(loginHeader);
     header.appendChild(signupHeader);
 
-    console.log("Got here");
-
     // Main Body text append
 
     // If the has not loggedin yet, append message stating that the user must first sign in
@@ -44,7 +42,20 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     main.appendChild(logPrompt);
   } else if (user !== null) {
+    // Append Sticky-Header with Profile Stats
+
     // User has signed in already, append with profile page and stats
+    let email = user.email;
+    let profileText = document.createTextNode("Welcome back " + email);
+
+    let profileHeader = document.createElement("a");
+
+    profileHeader.setAttribute("href", "profile.html");
+    profileHeader.setAttribute("id", "header-button");
+    profileHeader.appendChild(profileText);
+
+    header.appendChild(profileHeader);
+
     // If the has not loggedin yet, append message stating that the user must first sign in
     let logPrompt = document.createElement("H1");
     let logPromptText = document.createTextNode("Hi");
