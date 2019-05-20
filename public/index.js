@@ -42,12 +42,30 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     main.appendChild(logPrompt);
   } else if (user !== null) {
-    // Append Sticky-Header with Profile Stats
-
     // User has signed in already, append with profile page and stats
+
+    // Add logout button
+    let logoutHeader = document.createElement("a");
+    let logoutText = document.createTextNode("Log out");
+
+    logoutHeader.setAttribute("id", "header-button");
+    logoutHeader.appendChild(logoutText);
+
+    logoutHeader.addEventListener('click', function() {
+      // Add logout button
+      firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+        window.location = "index.html";
+      }, function(error) {
+        // An error happened.
+      });
+    }, false);
+
+    header.append(logoutHeader);
+
+    // Append Sticky-Header with Profile Stats
     let email = user.email;
     let profileText = document.createTextNode("Welcome back " + email);
-
     let profileHeader = document.createElement("a");
 
     profileHeader.setAttribute("href", "profile.html");

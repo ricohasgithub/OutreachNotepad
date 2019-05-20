@@ -85,8 +85,6 @@
       // Get query email and password info
       let email = document.querySelector('#email').value;;
       let password = document.querySelector('#password').value;
-      console.log(email);
-      console.log(password);
       // Firebase sign in
       firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
